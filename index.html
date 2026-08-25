@@ -31,6 +31,7 @@
     <button class="tab-btn" data-tab="unit2">2️⃣ Unit 2</button>
     <button class="tab-btn" data-tab="glossary">📚 Glossary</button>
     <button class="tab-btn" data-tab="quiz">🎯 Quiz Zone</button>
+    <button class="tab-btn" data-tab="exam">🎓 Exam Prep</button>
   </nav>
 </header>
 
@@ -82,6 +83,7 @@
         <button class="quicklink" data-goto="unit2">2️⃣ Unit 2</button>
         <button class="quicklink" data-goto="glossary">📚 Glossary</button>
         <button class="quicklink" data-goto="quiz">🎯 Quiz Zone</button>
+        <button class="quicklink" data-goto="exam">🎓 Exam Prep</button>
       </div>
     </div>
   </section>
@@ -183,10 +185,35 @@
         <button class="btn-primary" data-quiz="foundations">Foundations</button>
         <button class="btn-primary" data-quiz="unit1">Unit 1</button>
         <button class="btn-primary" data-quiz="unit2">Unit 2</button>
+        <button class="btn-primary" data-quiz="examSkills">Exam Skills</button>
         <button class="btn-primary" data-quiz="mixed">Mixed (all topics)</button>
       </div>
     </div>
     <div class="card" id="quiz-area" style="display:none;"></div>
+  </section>
+
+  <!-- EXAM PREP -->
+  <section class="tab-panel" id="tab-exam">
+    <div class="card" id="exam-note-card"></div>
+    <div class="card">
+      <h2>How the Unit 3 &amp; 4 exam is structured</h2>
+      <p class="muted">15 min reading time + 90 min writing time · 80 marks total</p>
+      <div class="grid-2" id="exam-sections"></div>
+    </div>
+    <div class="card">
+      <h2>Command words: know what each one actually wants</h2>
+      <div class="flip-grid flip-grid-wide" id="command-words-grid"></div>
+    </div>
+    <div class="card">
+      <h2>Practice prompts</h2>
+      <p class="muted">Draft an answer in your own words. These autosave — no pressure to finish in one go. Draft 4+ to earn the Exam Ready badge.</p>
+      <div id="exam-practice-list"></div>
+    </div>
+    <div class="card quiz-cta">
+      <h3>Check your understanding</h3>
+      <p>Quick quiz on exam structure and command words.</p>
+      <button class="btn-primary" data-quiz="examSkills">Start Exam Skills Quiz</button>
+    </div>
   </section>
 
 </main>

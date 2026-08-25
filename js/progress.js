@@ -15,7 +15,8 @@ const BADGE_DEFS = {
   unit2: { label: 'Unit 2 Wrapped', desc: 'Completed every checklist item across Unit 2.' },
   glossary: { label: 'Glossary Guru', desc: 'Flipped every flashcard in the glossary.' },
   quizWhiz: { label: 'Quiz Whiz', desc: 'Scored 80% or higher on a quiz.' },
-  readySet: { label: 'Ready for Unit 3/4', desc: 'Completed Foundations, Unit 1 and Unit 2.' }
+  readySet: { label: 'Ready for Unit 3/4', desc: 'Completed Foundations, Unit 1 and Unit 2.' },
+  examReady: { label: 'Exam Ready', desc: 'Drafted answers to 4+ practice prompts in the Exam Prep tab.' }
 };
 
 function defaultProgress() {
@@ -27,7 +28,8 @@ function defaultProgress() {
     quizBest: {},
     badges: [],
     journal: '',
-    artistGrids: { unit1: [{}, {}, {}], unit2: [{}, {}, {}] }
+    artistGrids: { unit1: [{}, {}, {}], unit2: [{}, {}, {}] },
+    examPractice: {}
   };
 }
 
@@ -95,6 +97,22 @@ function toggleFlashcard(id) {
   progress.flashcards[id] = true;
   addXP(2);
   checkBadges();
+}
+
+function saveExamPractice(id, text) {
+  const wasEmpty = !progress.examPractice[id];
+  progress.examPractice[id] = text;
+  if (wasEmpty && text.trim().length > 0) {
+    addXP(6);
+  } else {
+    saveProgress();
+  }
+  checkExamBadge();
+}
+
+function checkExamBadge() {
+  const count = Object.values(progress.examPractice).filter(t => t && t.trim().length > 0).length;
+  if (count >= 4) awardBadge('examReady');
 }
 
 function recordQuizScore(quizId, pct) {

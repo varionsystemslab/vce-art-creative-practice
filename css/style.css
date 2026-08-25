@@ -235,6 +235,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 18px 16px 60px; }
 
 .prompt-text { font-weight: 600; min-height: 1.4em; }
 
+.exam-prompt { margin-bottom: 12px; }
+.exam-prompt textarea {
+  width: 100%; font-family: inherit; font-size: 0.92rem; padding: 9px 11px;
+  border: 1px solid var(--border); border-radius: 8px; color: var(--ink); resize: vertical;
+}
+
 /* Glossary flip cards */
 .flip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
 .flip-grid-wide { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderUnit(UNIT2, 'unit2');
   initGlossary();
   initArtForms();
+  initExamPrep();
   initQuizButtons();
   renderDashboard();
   refreshHeaderProgress();
@@ -354,5 +355,44 @@ function initQuizButtons() {
       goToTab('quiz');
       startQuiz(btn.dataset.quiz);
     });
+  });
+}
+
+/* ---------- Exam Prep ---------- */
+function initExamPrep() {
+  const noteCard = document.getElementById('exam-note-card');
+  noteCard.innerHTML = `
+    <h2>🎓 Where this is heading</h2>
+    <p><strong>Units 1 and 2 are not examined.</strong> ${EXAM_INFO.note}</p>
+    <p class="try-it">${EXAM_INFO.bigTakeaway}</p>
+  `;
+
+  const sectionsWrap = document.getElementById('exam-sections');
+  EXAM_INFO.sections.forEach(sec => {
+    const el = document.createElement('div');
+    el.className = 'mini-card';
+    el.innerHTML = `
+      <h4>${sec.name} <span class="muted">— ${sec.marksRange}</span></h4>
+      <p>${sec.focus}</p>
+      <ul>${sec.taskTypes.map(t => `<li>${t}</li>`).join('')}</ul>
+    `;
+    sectionsWrap.appendChild(el);
+  });
+
+  buildFlipGrid('command-words-grid', COMMAND_WORDS.map(c => ({ term: c.word, def: `${c.meaning} 💡 ${c.tip}` })), 'cw');
+
+  const listWrap = document.getElementById('exam-practice-list');
+  EXAM_PRACTICE.forEach(p => {
+    const box = document.createElement('div');
+    box.className = 'prompt-box exam-prompt';
+    const saved = progress.examPractice[p.id] || '';
+    box.innerHTML = `
+      <h4>${p.section} <span class="muted">— ${p.marks} marks, ~${p.minutes} min</span></h4>
+      <p>${p.prompt}</p>
+      <textarea rows="4" placeholder="Draft your answer here...">${saved}</textarea>
+    `;
+    const textarea = box.querySelector('textarea');
+    textarea.addEventListener('input', () => saveExamPractice(p.id, textarea.value));
+    listWrap.appendChild(box);
   });
 }

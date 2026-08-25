@@ -456,3 +456,76 @@ const QUIZ_BANK = {
     ], answer: 1, explain: 'Collaboration is broad — peers, professionals/specialists, or audience participation all count.' }
   ]
 };
+
+/* ---------------------------------------------------------------------
+   Exam Prep content.
+   Units 1 & 2 have NO VCAA exam — assessment is entirely school-based
+   (see EXAM_INFO.note). But the Unit 3 & 4 Art Creative Practice written
+   examination tests exactly the skills built in Units 1 & 2: applying the
+   Interpretive Lenses, analysing art elements/principles, and discussing
+   artists you have personally researched. This section previews that exam
+   using facts drawn from the real, published VCAA exam structure (2023
+   sample exam, 2024 and 2025 papers) — format and skills only. No actual
+   exam questions, sources or artwork images are reproduced here; every
+   practice prompt below is original, written to match the real pattern.
+--------------------------------------------------------------------- */
+
+const EXAM_INFO = {
+  note: 'Units 1 and 2 are NOT examined by VCAA — your result is entirely school-based (a Satisfactory/Not Satisfactory call by your teacher). There is no "Unit 1/2 past exam". What follows is a preview of the real Unit 3 & 4 written examination, because the skills it tests are exactly what you are building right now.',
+  timing: { reading: 15, writing: 90, totalMarks: 80 },
+  sections: [
+    {
+      name: 'Section A',
+      marksRange: '60 marks (6–7 questions)',
+      focus: 'Unseen artworks. You are given an insert of artworks (and sometimes short written sources) you have never seen before, and must respond on the spot.',
+      taskTypes: [
+        'Describe how a named art element and/or art principle has been used in an unseen artwork (short answer, 5–6 marks)',
+        'Use a named Interpretive Lens (Structural, Personal or Cultural) to interpret an unseen artwork, referring to details in it (6–8 marks)',
+        'Discuss the ideas or issues explored in an unseen artwork by an artist (6–8 marks)',
+        'Analyse how an artist\'s use of visual language communicates meaning (8 marks)',
+        'Respond to one or two short written sources about an artist\'s practice, identifying or discussing issues raised, referencing both the artwork and the source(s) (13–14 marks)',
+        'Use two named lenses to compare the meanings and messages of two unseen artworks, referencing sources provided (16–20 marks)'
+      ]
+    },
+    {
+      name: 'Section B',
+      marksRange: '20 marks (1–2 questions)',
+      focus: 'Artists YOU have studied. No insert — you write from memory about artists and artworks you personally researched during the year, so you must know names, dates, and specific visual details cold.',
+      taskTypes: [
+        'Discuss the ideas/issues explored by one artist you have studied, applying a named Interpretive Lens, referring to at least one specific artwork (8 marks)',
+        'Compare the practices of one historical artist and one contemporary artist you have studied — analysing and interpreting one artwork by each using named Interpretive Lens(es), often covering stylistic qualities, context, and/or life experiences and beliefs (12–20 marks)'
+      ]
+    }
+  ],
+  bigTakeaway: 'Section B is the exact skill you are practising right now in the Artist Research Toolkit (Unit 1 & Unit 2, Area of Study 1): pick real artists, know specific artworks by name and date, and be ready to apply a named lens to them from memory. The more detail you bank now, the less you have to cram in Year 12.'
+};
+
+const COMMAND_WORDS = [
+  { word: 'Describe', meaning: 'State what is there, plainly and specifically — name the element/principle and point to exactly where/how it appears.', tip: 'Lowest-mark, most literal command word. Don\'t interpret meaning yet — just identify and describe.' },
+  { word: 'Discuss', meaning: 'Explore an idea from more than one angle, with supporting detail — not just one flat statement.', tip: 'Examiners want you to unpack "why" and "how", not just assert an opinion.' },
+  { word: 'Analyse', meaning: 'Break the artwork down into its parts (materials, techniques, elements, principles) and explain how those parts work together to create meaning.', tip: 'Go beyond listing — connect the visual choice to the effect or message it creates.' },
+  { word: 'Interpret', meaning: 'Explain what the artwork means or communicates, using a named lens as your framework.', tip: 'Always state which lens you\'re using and use its specific vocabulary (e.g. Structural: elements/principles; Personal: feelings/beliefs; Cultural: context/values).' },
+  { word: 'Compare', meaning: 'Discuss similarities AND differences between two (or more) artworks/artists, using the same lens(es) consistently on both.', tip: 'Don\'t describe one artwork then the other in isolation — actively draw connections between them.' },
+  { word: 'Identify and discuss', meaning: 'Name the specific issue(s) first, then explain them with evidence.', tip: 'Common in source-based questions — make sure you actually name the issue before discussing it.' },
+  { word: 'Evaluate', meaning: 'Make a judgment about how successfully something communicates meaning or achieves its purpose, backed by evidence.', tip: 'Used in your own reflection/critique work (Unit 1 & 2, Area of Study 3) — always justify the judgment.' }
+];
+
+const EXAM_PRACTICE = [
+  { id: 'ep1', section: 'Section A style', marks: 6, minutes: 8, prompt: 'Choose one artwork from your Unit 1 artist research or your own visual diary. Describe how ONE art element and ONE art principle have been used in it.' },
+  { id: 'ep2', section: 'Section A style', marks: 8, minutes: 10, prompt: 'Use the Structural Lens to interpret one artwork by an artist you researched in Unit 1, Area of Study 1. Refer to specific details in the artwork.' },
+  { id: 'ep3', section: 'Section A style', marks: 8, minutes: 10, prompt: 'Discuss the ideas or issues explored in an artwork by one of your Unit 2 artists.' },
+  { id: 'ep4', section: 'Section A style', marks: 8, minutes: 10, prompt: 'Analyse how an artist\'s use of visual language (elements, principles, materials, techniques, processes) communicates meaning in one artwork you have studied.' },
+  { id: 'ep5', section: 'Section A style', marks: 8, minutes: 10, prompt: '"The context of an artwork is the frame of reference that allows the meaning of an artwork to be interpreted." Discuss how context shapes the meaning of one artwork you have researched.' },
+  { id: 'ep6', section: 'Section A style', marks: 16, minutes: 20, prompt: 'Use the Structural Lens and the Cultural Lens to compare the meanings and messages in artworks by two of the three artists in your Unit 2 research toolkit.' },
+  { id: 'ep7', section: 'Section B style', marks: 8, minutes: 10, prompt: 'Discuss the ideas and issues explored by one artist you have studied this year. Refer to evidence from at least one specific artwork.' },
+  { id: 'ep8', section: 'Section B style', marks: 12, minutes: 16, prompt: 'Compare the practices of one historical artist and one contemporary artist you have studied, by analysing and interpreting the meanings and messages of one artwork by each. Apply the Structural Lens and the Cultural Lens.' }
+];
+
+QUIZ_BANK.examSkills = [
+  { q: 'In the Unit 3 & 4 exam, what does Section A mainly test?', options: ['Only artists you personally researched', 'Your response to unseen artworks (and sometimes sources) you have never seen before', 'Your final Body of Work', 'Group collaboration skills'], answer: 1, explain: 'Section A gives you an insert of unfamiliar artworks to analyse on the spot — roughly 60 of the 80 marks.' },
+  { q: 'What does Section B of the exam mainly test?', options: ['Unseen artworks', 'Artists and artworks YOU personally studied during the year', 'Multiple choice art history trivia', 'Your visual diary presentation'], answer: 1, explain: 'Section B has no insert — you write from memory about artists you researched, worth about 20 of the 80 marks.' },
+  { q: 'Are Unit 1 and Unit 2 examined by VCAA?', options: ['Yes, every November', 'No — Units 1 and 2 are assessed entirely at school (Satisfactory/Not Satisfactory)', 'Only Unit 2 is examined', 'Only if your school opts in'], answer: 1, explain: 'Only Units 3 & 4 have a VCAA exam. Units 1 & 2 results are school-based and not reported to VCAA as a grade.' },
+  { q: 'A question says "Describe how the artist has used colour." What is it actually asking for?', options: ['Your opinion on whether the artwork is good', 'A plain, specific identification of where/how colour appears — no interpretation needed yet', 'A comparison with another artist', 'A critique of the artist\'s career'], answer: 1, explain: '"Describe" is the most literal command word — name it and point to it.' },
+  { q: 'A question says "Use the Cultural Lens to interpret this artwork." What must your answer include?', options: ['Only art elements and principles', 'Social, historical, political or cultural context and how it shapes meaning — named explicitly as the Cultural Lens', 'Your personal feelings about the artwork only', 'A biography of the artist with no analysis'], answer: 1, explain: 'Whenever a lens is named, use that lens\'s specific vocabulary and framework, not a different one.' },
+  { q: 'Why does building a detailed Artist Research Toolkit in Unit 1 & 2 actually help with the Year 12 exam?', options: ['It doesn\'t — Units 1/2 and 3/4 are unrelated', 'Section B requires you to write from memory about artists you personally studied — the same artists and lens notes from now can be reused', 'Only if you study the exact same artists again in Unit 3/4', 'Because it replaces the need to study in Year 12'], answer: 1, explain: 'The skill — knowing specific artists/artworks in detail and applying a named lens from memory — is identical to what Section B demands.' }
+];

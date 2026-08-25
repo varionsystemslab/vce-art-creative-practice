@@ -4,7 +4,7 @@ let activeQuiz = null;
 
 function buildQuizQuestions(category) {
   if (category === 'mixed') {
-    const all = [...QUIZ_BANK.foundations, ...QUIZ_BANK.unit1, ...QUIZ_BANK.unit2];
+    const all = [...QUIZ_BANK.foundations, ...QUIZ_BANK.unit1, ...QUIZ_BANK.unit2, ...QUIZ_BANK.examSkills];
     return shuffleArray(all).slice(0, 10);
   }
   return shuffleArray(QUIZ_BANK[category].slice());
